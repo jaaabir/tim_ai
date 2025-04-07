@@ -1,0 +1,31 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+.env
+.venv/
+
+# Streamlit + FastAPI asset folders
+assets/
+hubspace/
+my-portfolio-rag-app/
+
+# VSCode / IDEs
+.vscode/
+.idea/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Python env/tools
+pip-log.txt
+
+#ipynb
+*.ipynb
