@@ -14,7 +14,8 @@ st.set_page_config(page_title=f"{app_name}", page_icon="🤖", layout="centered"
 # --- Environment Config ---
 API_URI = os.environ.get('SERVER_URI', 'localhost')
 API_PORT = os.environ.get('SERVER_PORT', '7860')
-URI = f'http://{API_URI}:{API_PORT}/chat/stream'
+DEVELOPMENT = False
+URI = f'http://{API_URI}:{API_PORT}/chat/stream' if not DEVELOPMENT else f'{API_URI}/chat/stream'
 greetings = "Hello! I am Muhammed Jaabir's personal AI assistant. How can I help you today?"
 
 # --- Custom CSS for dark mode and UI styling ---
