@@ -39,39 +39,4 @@ app.add_middleware(SecretKeyMiddleware)
 
 @app.post('/chat/stream')
 async def run(input: dict):
-    print(input)
     return StreamingResponse(stream_response(input), media_type='text/plain')
-
-if __name__ == "__main__":
-    uvicorn.run(app, port=8000)
-
-
-# runnable_workflow = RunnableLambda(invoke_response)
-# runnable_async_workflow = awit RunnableLambda(stream_response)
-
-# add_routes(
-#     app,
-#     runnable_workflow, 
-#     path="/chat", 
-#     playground_type='chat'
-# )
-
-# def invoke_response(input: dict) -> str: 
-#     state = {'user_query': input.get('user_query', '')}
-#     response = workflow.stream(state) 
-    
-#     if isinstance(response, dict) and 'response' in response:
-#         return response['response']
-    
-#     return {'output': 'Error processing request'}
-
-# async def stream_response(input: dict):
-#     state = {'user_query': input.get('user_query', '')}
-
-#     for chunk in workflow.stream(state): 
-#         if isinstance(chunk, dict):
-#             if 'response' in chunk:
-#                 yield chunk['response']
-#         else:
-#             yield str(chunk) 
-#         await asyncio.sleep(0)

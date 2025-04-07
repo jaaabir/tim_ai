@@ -104,7 +104,6 @@ class MyAgent:
         return state
 
     def llm_node(self, state: State) -> State:
-        print(state)
         chain = self.llm | CleanStrOutputParser()
         messages = state['chat_history']
         response = chain.invoke(messages)
